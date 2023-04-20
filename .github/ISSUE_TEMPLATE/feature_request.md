@@ -1,34 +1,36 @@
 ---
-name: 🌈 Feature request
-about: Suggest an amazing new idea for this project
+name: 🌈 機能リクエスト
+about: このプロジェクトについて素晴らしい新しいアイデアを提案します。
 title: ''
 labels: enhancement
 assignees: ''
-
 ---
 
-## Feature Request
+## 機能リクエスト
 
-**Is your feature request related to a problem? Please describe.**
-<!-- A clear and concise description of what the problem is. Ex. I have an issue when [...] -->
+**あなたの機能リクエストは問題に関連していますか？ 説明してください。**
 
-**Describe the solution you'd like**
-<!-- A clear and concise description of what you want to happen. Add any considered drawbacks. -->
+<!-- 問題が何かを明確かつ簡潔に説明してください。例：[...] で問題が発生します。-->
 
-**Describe alternatives you've considered**
-<!-- A clear and concise description of any alternative solutions or features you've considered. -->
+**希望する解決策を説明してください**
 
-## Are you willing to resolve this issue by submitting a Pull Request?
+<!-- 望む結果を明確かつ簡潔に説明してください。検討した欠点を追加してください。-->
+
+**検討した代替案を説明してください**
+
+<!-- 検討した代替解決策や機能の説明を明確かつ簡潔に説明してください。-->
+
+## Pull Request を提出してこの問題を解決することに同意しますか？
 
 <!--
-  Remember that first-time contributors are welcome! 🙌
+  初めての貢献者も歓迎です！ 🙌
 -->
 
-- [ ] Yes, I have the time, and I know how to start.
-- [ ] Yes, I have the time, but I don't know how to start. I would need guidance.
-- [ ] No, I don't have the time, although I believe I could do it if I had the time...
-- [ ] No, I don't have the time and I wouldn't even know how to start.
+- [ ] はい、時間があり、どのように始めればよいか知っています。
+- [ ] はい、時間はありますが、どう始めればよいかわかりません。指導が必要です。
+- [ ] いいえ、時間がありませんが、時間があればできると思います。
+- [ ] いいえ、時間もなく、どう始めたらよいかもわかりません。
 
 <!--
-  👋 Have a great day and thank you for the feature request!
+  👋 ご提案ありがとうございます！
 -->

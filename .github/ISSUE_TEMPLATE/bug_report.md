@@ -1,28 +1,27 @@
 ---
-name: "🐛 Bug Report"
-about: Report a reproducible bug or regression.
+name: '🐛 バグ報告'
+about: 再現可能なバグまたはリグレッションを報告します。
 title: ''
 labels: bug
 assignees: ''
-
 ---
 
-## Current Behavior
+## 現在の動作
 
-<!-- Describe how the issue manifests. -->
+<!-- 問題がどのように表れるかを説明してください。 -->
 
-## Expected Behavior
+## 期待する動作
 
-<!-- Describe what the desired behavior would be. -->
+<!-- 望ましい動作を説明してください。 -->
 
-## Steps to Reproduce the Problem
+## 問題の再現手順
 
-  1.
-  1.
-  1.
+1.
+1.
+1.
 
-## Environment
+## 環境
 
-- Version: <!-- Version set in package.json -->
-- Platform: <!-- Win/Mac/Linux -->
-- Node.js Version: <!-- Output of running `node -v` -->
+- バージョン: <!-- package.json に設定されたバージョン -->
+- プラットフォーム: <!-- Win/Mac/Linux -->
+- Node.js バージョン: <!-- `node -v` を実行した結果の出力 -->

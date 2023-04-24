@@ -58,4 +58,40 @@ describe('index', () => {
       );
     });
   });
+
+  it('アセットバージョンの取得(バージョン指定)', async () => {
+    const princessApiSdk = new PrincessApiSdk();
+    const response = await princessApiSdk.getAssetVersion(1);
+
+    expect(response).toEqual({
+      version: expect.any(Number),
+      updatedAt: expect.any(Date),
+      indexName: expect.any(String),
+    });
+  });
+
+  it('アセットバージョンの取得(バージョン指定なし)', async () => {
+    const princessApiSdk = new PrincessApiSdk();
+    const response = await princessApiSdk.getAssetVersion();
+
+    console.log(response);
+    expect(response).toEqual(
+      expect.arrayContaining([
+        {
+          version: expect.any(Number),
+          updatedAt: expect.any(Date),
+          indexName: expect.any(String),
+        },
+      ])
+    );
+  });
+
+  it('アセットバージョンの取得(バージョン指定(バージョンが不正))', async () => {
+    async function errFunction() {
+      const princessApiSdk = new PrincessApiSdk();
+      await princessApiSdk.getAssetVersion(-1);
+    }
+
+    await expect(errFunction).rejects.toThrow(PrincessInvalidArgumentException);
+  });
 });

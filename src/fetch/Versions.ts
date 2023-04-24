@@ -5,6 +5,10 @@ import {
   IGetAppVersionArray,
 } from '../schemas/Versions/IGetAppVersion';
 import { PrincessInvalidArgumentException } from '../errer/PrincessInvalidArgumentException';
+import {
+  IGetAssetVersion,
+  IGetAssetVersionArray,
+} from '../schemas/Versions/IGetAssetVersion';
 
 export class Versions {
   private axios: AxiosInstance;
@@ -36,8 +40,9 @@ export class Versions {
    * アプリバージョンの取得
    * アプリのバージョン情報を取得します。
    * 必須アプリバージョンにもとづくため、実際には配信されていないバージョンが返される可能性があります。
-   * @param version
-   * @returns Promise<IGetAppVersionArray>
+   *
+   * @param version バージョンを指定しない場合、レスポンスはすべてのバージョンの配列になります。
+   * @returns Promise<IGetAppVersionArray | IGetAppVersion>
    */
   public async getAppVersion(
     version = ''
@@ -60,6 +65,45 @@ export class Versions {
         );
         return {
           revision: response.data.revision ? response.data.revision : null,
+          updatedAt: new Date(response.data.updatedAt),
+          version: response.data.version,
+        };
+      } catch (e) {
+        throw new PrincessInvalidArgumentException(
+          1,
+          `Invalid argument was specified. version = ${version}`
+        );
+      }
+    }
+  }
+
+  /**
+   * アセットバージョンの取得
+   * アセットのバージョン情報を取得します。
+   *
+   * @param version バージョンを指定しない場合、レスポンスはすべてのバージョンの配列になります。
+   * @returns Promise<IGetAssetVersionArray | IGetAssetVersion>
+   */
+  public async getAssetVersion(
+    version = 0
+  ): Promise<IGetAssetVersionArray | IGetAssetVersion> {
+    if (version === 0) {
+      const response: AxiosResponse<IGetAssetVersionArray> =
+        await this.axios.get('/version/assets');
+      return response.data.map(data => {
+        return {
+          indexName: data.indexName,
+          updatedAt: new Date(data.updatedAt),
+          version: data.version,
+        };
+      });
+    } else {
+      try {
+        const response: AxiosResponse<IGetAssetVersion> = await this.axios.get(
+          `/version/assets/${version}`
+        );
+        return {
+          indexName: response.data.indexName,
           updatedAt: new Date(response.data.updatedAt),
           version: response.data.version,
         };

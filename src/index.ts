@@ -1,6 +1,7 @@
-import { AxiosInstance, AxiosResponse } from 'axios';
+import { AxiosInstance } from 'axios';
 import { axios } from './fetch/main';
 import { IGetLatestAppAssetVersion } from './schemas/IGetLatestAppAssetVersion';
+import { Versions } from './fetch/Versions';
 
 export class PrincessApiSdk {
   private axios: AxiosInstance;
@@ -14,17 +15,6 @@ export class PrincessApiSdk {
    * @returns Promise<IGetLatestAppAssetVersion>
    */
   public async getLatestAppAssetVersion(): Promise<IGetLatestAppAssetVersion> {
-    const response: AxiosResponse<IGetLatestAppAssetVersion> =
-      await this.axios.get('/version/latest');
-    return {
-      app: {
-        ...response.data.app,
-        updatedAt: new Date(response.data.app.updatedAt),
-      },
-      asset: {
-        ...response.data.asset,
-        updatedAt: new Date(response.data.asset.updatedAt),
-      },
-    };
+    return new Versions(this.axios).getLatestAppAssetVersion();
   }
 }

@@ -1,42 +1,39 @@
 <!--
-  😀 Wonderful!  Thank you for opening a pull request.
+  😀 素晴らしい！ プルリクエストを開いていただきありがとうございます。
 
-  Please fill in the information below to expedite the review
-  and (hopefully) merge of your change.
+  下記の情報を記入していただくことで、あなたの変更を迅速にレビューし、
+  マージすることができるようになります（期待しています！）。
 -->
 
-### Description of change
+### 変更の説明
 
 <!--
-  Please be clear and concise what the change is intended to do,
-  why this change is needed, and how you've verified that it
-  corrects what you intended.
+  変更が何を意図しているか、なぜこの変更が必要なのか、
+  そして、どのようにして変更が正しく動作することを検証したのかを明確かつ簡潔に説明してください。
 
-  In some cases it may be helpful to include the current behavior
-  and the new behavior.
+  現在の動作と新しい動作を含めることがあるかもしれません。
 
-  If the change is related to an open issue, you can link it here.
-  If you include `Fixes #0000` (replacing `0000` with the issue number)
-  when this is merged it will automatically mark the issue as fixed and
-  close it.
+  変更が問題に関連している場合は、ここでリンクすることができます。
+  `Fixes #0000`（`0000`を問題番号に置き換える）を含めると、
+  マージされると自動的に問題が修正され、閉じられます。
 -->
 
-### Pull-Request Checklist
+### プルリクエストのチェックリスト
 
 <!--
-  Please make sure to review and check all of the following.
+  以下のすべてを確認し、チェックしてください。
 
-  If an item is not applicable, you can add "N/A" to the end.
+  該当しない項目は、最後に「N/A」と追加することができます。
 -->
 
-- [ ] Code is up-to-date with the `main` branch
-- [ ] `npm run lint` passes with this change
-- [ ] `npm run test` passes with this change
-- [ ] This pull request links relevant issues as `Fixes #0000`
-- [ ] There are new or updated unit tests validating the change
-- [ ] Documentation has been updated to reflect this change
-- [ ] The new commits follow conventions outlined in the [conventional commit spec](https://www.conventionalcommits.org/en/v1.0.0/)
+- [ ] コードが `main` ブランチに最新の状態になっています
+- [ ] `npm run lint` がこの変更でも通過するようになっています
+- [ ] `npm run test` がこの変更でも通過するようになっています
+- [ ] このプルリクエストが `Fixes #0000` と関連する問題にリンクしています
+- [ ] 新しいまたは更新されたユニットテストが変更を検証しています
+- [ ] ドキュメントがこの変更を反映するように更新されました
+- [ ] 新しいコミットは、[conventional commit spec](https://www.conventionalcommits.org/en/v1.0.0/)で定義された規約に従っています
 
 <!--
-  🎉 Thank you for contributing!
+  🎉 貢献してくださってありがとうございます！
 -->

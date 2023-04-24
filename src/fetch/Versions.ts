@@ -4,6 +4,7 @@ import {
   IGetAppVersion,
   IGetAppVersionArray,
 } from '../schemas/Versions/IGetAppVersion';
+import { PrincessInvalidArgumentException } from '../errer/PrincessInvalidArgumentException';
 
 export class Versions {
   private axios: AxiosInstance;
@@ -53,14 +54,21 @@ export class Versions {
         };
       });
     } else {
-      const response: AxiosResponse<IGetAppVersion> = await this.axios.get(
-        `/version/apps/${version}`
-      );
-      return {
-        revision: response.data.revision ? response.data.revision : null,
-        updatedAt: new Date(response.data.updatedAt),
-        version: response.data.version,
-      };
+      try {
+        const response: AxiosResponse<IGetAppVersion> = await this.axios.get(
+          `/version/apps/${version}`
+        );
+        return {
+          revision: response.data.revision ? response.data.revision : null,
+          updatedAt: new Date(response.data.updatedAt),
+          version: response.data.version,
+        };
+      } catch (e) {
+        throw new PrincessInvalidArgumentException(
+          1,
+          `Invalid argument was specified. version = ${version}`
+        );
+      }
     }
   }
 }

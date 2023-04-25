@@ -45,9 +45,9 @@ export class Versions {
    * @returns Promise<IGetAppVersionArray | IGetAppVersion>
    */
   public async getAppVersion(
-    version = ''
+    version?: string
   ): Promise<IGetAppVersionArray | IGetAppVersion> {
-    if (version === '') {
+    if (!version) {
       const response: AxiosResponse<IGetAppVersionArray> = await this.axios.get(
         '/version/apps'
       );
@@ -85,9 +85,9 @@ export class Versions {
    * @returns Promise<IGetAssetVersionArray | IGetAssetVersion>
    */
   public async getAssetVersion(
-    version = 0
+    version?: number
   ): Promise<IGetAssetVersionArray | IGetAssetVersion> {
-    if (version === 0) {
+    if (!version) {
       const response: AxiosResponse<IGetAssetVersionArray> =
         await this.axios.get('/version/assets');
       return response.data.map(data => {

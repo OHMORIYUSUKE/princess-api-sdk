@@ -1,8 +1,7 @@
-export type IGetAssetVersionArray = AssetVersion[];
-export type IGetAssetVersion = AssetVersion;
+export type IGetAssetVersionArray = IGetAssetVersion[];
 
-interface AssetVersion {
+export type IGetAssetVersion = {
   version: number;
   updatedAt: Date;
   indexName: string;
-}
+};

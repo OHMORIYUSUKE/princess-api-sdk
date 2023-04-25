@@ -3,14 +3,14 @@ export interface IGetLatestAppAssetVersion {
   asset: Asset;
 }
 
-interface App {
+type App = {
   version: string;
   updatedAt: Date;
   revision: number;
-}
+};
 
-interface Asset {
+type Asset = {
   version: number;
   updatedAt: Date;
   indexName: string;
-}
+};

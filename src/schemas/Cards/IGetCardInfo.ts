@@ -1,7 +1,6 @@
-export type IGetCardInfoArray = CardInfo[];
-export type IGetCardInfo = CardInfo;
+export type IGetCardInfoArray = IGetCardInfo[];
 
-interface CardInfo {
+export type IGetCardInfo = {
   id: number;
   name: string;
   sortId: number;
@@ -22,14 +21,14 @@ interface CardInfo {
   lines: Lines;
   addedAt: string;
   event: Event;
-}
+};
 
-interface Costumes {
+type Costumes = {
   default: Default;
   bonus: Bonus;
-}
+};
 
-interface Default {
+type Default = {
   id: number;
   sortId: number;
   name: string;
@@ -40,9 +39,9 @@ interface Default {
   collaborationNumber: number;
   defaultHairstyle: number;
   releasedAt: Date;
-}
+};
 
-interface Bonus {
+type Bonus = {
   id: number;
   sortId: number;
   name: string;
@@ -53,78 +52,78 @@ interface Bonus {
   collaborationNumber: number;
   defaultHairstyle: number;
   releasedAt: Date;
-}
+};
 
-interface Parameters {
+type Parameters = {
   vocal: Vocal;
   dance: Dance;
   visual: Visual;
   lvMax: LvMax;
   life: Life;
-}
+};
 
-interface Vocal {
+type Vocal = {
   base: number;
   beforeAwakened: BeforeAwakened;
   afterAwakened: AfterAwakened;
   masterBonus: number;
-}
+};
 
-interface BeforeAwakened {
+type BeforeAwakened = {
   diff: number;
   max: number;
-}
+};
 
-interface AfterAwakened {
+type AfterAwakened = {
   diff: number;
   max: number;
-}
+};
 
-interface Dance {
+type Dance = {
   base: number;
   beforeAwakened: BeforeAwakened2;
   afterAwakened: AfterAwakened2;
   masterBonus: number;
-}
+};
 
-interface BeforeAwakened2 {
+type BeforeAwakened2 = {
   diff: number;
   max: number;
-}
+};
 
-interface AfterAwakened2 {
+type AfterAwakened2 = {
   diff: number;
   max: number;
-}
+};
 
-interface Visual {
+type Visual = {
   base: number;
   beforeAwakened: BeforeAwakened3;
   afterAwakened: AfterAwakened3;
   masterBonus: number;
-}
+};
 
-interface BeforeAwakened3 {
+type BeforeAwakened3 = {
   diff: number;
   max: number;
-}
+};
 
-interface AfterAwakened3 {
+type AfterAwakened3 = {
   diff: number;
   max: number;
-}
+};
 
-interface LvMax {
+type LvMax = {
   beforeAwakened: number;
   afterAwakened: number;
-}
+};
 
-interface Life {
+type Life = {
   beforeAwakened: number;
   afterAwakened: number;
-}
+};
 
-interface CenterEffect {
+type CenterEffect = {
   id: number;
   name: string;
   description: string;
@@ -133,9 +132,9 @@ interface CenterEffect {
   songType: number;
   attributes: number[];
   values: number[];
-}
+};
 
-interface Skill {
+type Skill = {
   id: number;
   effectId: number;
   duration: number;
@@ -144,43 +143,43 @@ interface Skill {
   evaluationTypes: any[];
   values: number[];
   description: string;
-}
+};
 
-interface Lines {
+type Lines = {
   flavor: Flavor;
   contact: Contact;
   awakening: string;
-}
+};
 
-interface Flavor {
+type Flavor = {
   beforeAwakened: string;
   afterAwakened: string;
-}
+};
 
-interface Contact {
+type Contact = {
   beforeAwakened: string;
   afterAwakened: string;
-}
+};
 
-interface Event {
+type Event = {
   id: number;
   type: number;
   appealType: number;
   name: string;
   schedule: Schedule;
   item: Item;
-}
+};
 
-interface Schedule {
+type Schedule = {
   beginAt: string;
   endAt: string;
   pageOpenedAt: string;
   pageClosedAt: string;
   boostBeginAt: string;
   boostEndAt: string;
-}
+};
 
-interface Item {
+type Item = {
   name: string;
   shortName: string;
-}
+};

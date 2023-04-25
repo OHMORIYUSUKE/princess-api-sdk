@@ -7,7 +7,7 @@ export enum TypeEnum {
   Ex = 5,
 }
 
-export interface IGetIdolInfo {
+export type IGetIdolInfo = {
   id: number;
   sortId: number;
   resourceId: string;
@@ -32,12 +32,12 @@ export interface IGetIdolInfo {
   constellation: Constellation;
   bloodType: BloodType;
   measurements: Measurements;
-}
+};
 
-interface Birthplace {
+type Birthplace = {
   id: number;
   name: string;
-}
+};
 
 enum HandednessTypeIdEnum {
   _0 = 0,
@@ -51,20 +51,20 @@ enum HandednessTypeNameEnum {
   Left = '左',
 }
 
-interface HandednessType {
+type HandednessType = {
   id: HandednessTypeIdEnum;
   name: HandednessTypeNameEnum;
-}
+};
 
-interface Birthday {
+type Birthday = {
   month: number;
   day: number;
-}
+};
 
-interface Constellation {
+type Constellation = {
   id: number;
   name: string;
-}
+};
 
 enum BloodTypeIdEnum {
   _0 = 0,
@@ -82,13 +82,13 @@ enum BloodTypeNameEnum {
   O = 'O',
 }
 
-interface BloodType {
+type BloodType = {
   id: BloodTypeIdEnum;
   name: BloodTypeNameEnum;
-}
+};
 
-interface Measurements {
+type Measurements = {
   bust: number;
   waist: number;
   hip: number;
-}
+};

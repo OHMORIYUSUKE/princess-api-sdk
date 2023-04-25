@@ -10,6 +10,8 @@ import {
   IGetAssetVersion,
   IGetAssetVersionArray,
 } from './schemas/Versions/IGetAssetVersion';
+import { IGetIdolInfo, IGetIdolInfoArray } from './schemas/Idols/IGetIdolInfo';
+import { Idols } from './fetch/Idols';
 
 export class PrincessApiSdk {
   private axios: AxiosInstance;
@@ -50,5 +52,17 @@ export class PrincessApiSdk {
     version = 0
   ): Promise<IGetAssetVersionArray | IGetAssetVersion> {
     return new Versions(this.axios).getAssetVersion(version);
+  }
+
+  /**
+   * アイドルの情報の取得
+   * アイドルの情報を取得します。
+   * アイドルの情報のみ取得できます。事務員の情報は取得できません。
+   *
+   * @param id ID を指定しない場合、レスポンスはすべてのアイドルの配列になります。
+   * @returns Promise<IGetIdolInfo | IGetIdolInfoArray>
+   */
+  public async getIdolInfo(id = 0): Promise<IGetIdolInfo | IGetIdolInfoArray> {
+    return new Idols(this.axios).getIdolInfo(id);
   }
 }

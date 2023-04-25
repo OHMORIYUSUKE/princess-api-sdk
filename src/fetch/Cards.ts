@@ -1,8 +1,9 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
+import { IGetLatestAppAssetVersion } from '../schemas/Versions/IGetLatestAppAssetVersion';
 import { IGetIdolInfo, IGetIdolInfoArray } from '../schemas/Idols/IGetIdolInfo';
 import { PrincessInvalidArgumentException } from '../errer/PrincessInvalidArgumentException';
 
-export class Idols {
+export class Cards {
   private axios: AxiosInstance;
   constructor(axios: AxiosInstance) {
     this.axios = axios;
@@ -14,14 +15,16 @@ export class Idols {
    *
    * @returns Promise<IGetLatestAppAssetVersion>
    */
-  public async getIdolInfo(
+  public async getCardInfo(
     id?: number
   ): Promise<IGetIdolInfo | IGetIdolInfoArray> {
     if (!id) {
       const response: AxiosResponse<IGetIdolInfoArray> = await this.axios.get(
         '/idols'
       );
-      return response.data;
+      return response.data.map(data => {
+        return data;
+      });
     } else {
       try {
         const response: AxiosResponse<IGetIdolInfo> = await this.axios.get(

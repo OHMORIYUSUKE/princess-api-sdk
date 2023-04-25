@@ -1,7 +1,6 @@
-export type IGetAppVersionArray = AppVersion[];
-export type IGetAppVersion = AppVersion;
+export type IGetAppVersionArray = IGetAppVersion[];
 
-interface AppVersion {
+export interface IGetAppVersion {
   version: string;
   updatedAt: Date;
   revision: number | null;

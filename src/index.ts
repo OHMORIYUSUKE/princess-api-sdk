@@ -32,11 +32,12 @@ export class PrincessApiSdk {
    * アプリバージョンの取得
    * アプリのバージョン情報を取得します。
    * 必須アプリバージョンにもとづくため、実際には配信されていないバージョンが返される可能性があります。
-   * @param version
+   *
+   * @param version バージョンを指定しない場合、レスポンスはすべてのバージョンの配列になります。
    * @returns Promise<IGetAppVersion>
    */
   public async getAppVersion(
-    version = ''
+    version?: string
   ): Promise<IGetAppVersionArray | IGetAppVersion> {
     return new Versions(this.axios).getAppVersion(version);
   }
@@ -49,7 +50,7 @@ export class PrincessApiSdk {
    * @returns Promise<IGetAssetVersionArray | IGetAssetVersion>
    */
   public async getAssetVersion(
-    version = 0
+    version?: number
   ): Promise<IGetAssetVersionArray | IGetAssetVersion> {
     return new Versions(this.axios).getAssetVersion(version);
   }
@@ -62,7 +63,9 @@ export class PrincessApiSdk {
    * @param id ID を指定しない場合、レスポンスはすべてのアイドルの配列になります。
    * @returns Promise<IGetIdolInfo | IGetIdolInfoArray>
    */
-  public async getIdolInfo(id = 0): Promise<IGetIdolInfo | IGetIdolInfoArray> {
+  public async getIdolInfo(
+    id?: number
+  ): Promise<IGetIdolInfo | IGetIdolInfoArray> {
     return new Idols(this.axios).getIdolInfo(id);
   }
 }

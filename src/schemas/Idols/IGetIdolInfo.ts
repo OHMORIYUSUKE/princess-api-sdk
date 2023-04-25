@@ -1,9 +1,13 @@
-export type IGetIdolInfoArray = IdolInfo[];
-export type IGetIdolInfo = IdolInfo;
+export type IGetIdolInfoArray = IGetIdolInfo[];
 
-type TypeEnum = 1 | 2 | 3 | 5;
+export enum TypeEnum {
+  Princess = 1,
+  Fairy = 2,
+  Angel = 3,
+  Ex = 5,
+}
 
-interface IdolInfo {
+export type IGetIdolInfo = {
   id: number;
   sortId: number;
   resourceId: string;
@@ -28,41 +32,63 @@ interface IdolInfo {
   constellation: Constellation;
   bloodType: BloodType;
   measurements: Measurements;
-}
+};
 
-interface Birthplace {
+type Birthplace = {
   id: number;
   name: string;
+};
+
+enum HandednessTypeIdEnum {
+  _0 = 0,
+  _1 = 1,
+  _2 = 2,
 }
 
-type HandednessTypeIdEnum = 0 | 1 | 2;
-type HandednessTypeNameEnum = '右' | '左' | '設定なし';
+enum HandednessTypeNameEnum {
+  None = '設定なし',
+  Right = '右',
+  Left = '左',
+}
 
-interface HandednessType {
+type HandednessType = {
   id: HandednessTypeIdEnum;
   name: HandednessTypeNameEnum;
-}
+};
 
-interface Birthday {
+type Birthday = {
   month: number;
   day: number;
-}
+};
 
-interface Constellation {
+type Constellation = {
   id: number;
   name: string;
+};
+
+enum BloodTypeIdEnum {
+  _0 = 0,
+  _1 = 1,
+  _2 = 2,
+  _3 = 3,
+  _4 = 4,
 }
 
-type BloodTypeIdEnum = 0 | 1 | 2 | 3 | 4;
-type BloodTypeNameEnum = '設定なし' | 'A' | 'B' | 'AB' | 'O';
+enum BloodTypeNameEnum {
+  None = '設定なし',
+  A = 'A',
+  B = 'B',
+  AB = 'AB',
+  O = 'O',
+}
 
-interface BloodType {
+type BloodType = {
   id: BloodTypeIdEnum;
   name: BloodTypeNameEnum;
-}
+};
 
-interface Measurements {
+type Measurements = {
   bust: number;
   waist: number;
   hip: number;
-}
+};

@@ -22,13 +22,6 @@ jobs:
         run: npm run build
       - name: Test
         run: npm test
-      - name: git commit
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git commit --allow-empty -m "feat: release"
-          git config pull.rebase false
-          git push
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

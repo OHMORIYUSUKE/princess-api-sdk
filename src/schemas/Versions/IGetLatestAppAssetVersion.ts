@@ -6,7 +6,7 @@ export interface IGetLatestAppAssetVersion {
 type App = {
   version: string;
   updatedAt: Date;
-  revision: number;
+  revision: number | null;
 };
 
 type Asset = {

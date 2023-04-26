@@ -12,6 +12,8 @@ import {
 } from './schemas/Versions/IGetAssetVersion';
 import { IGetIdolInfo, IGetIdolInfoArray } from './schemas/Idols/IGetIdolInfo';
 import { Idols } from './fetch/Idols';
+import { IGetBorderInfo } from './schemas/EventRanking/IGetBorderInfo';
+import { EventRanking } from './fetch/EventRanking';
 
 export class PrincessApiSdk {
   private axios: AxiosInstance;
@@ -73,5 +75,15 @@ export class PrincessApiSdk {
     id?: number
   ): Promise<IGetIdolInfo | IGetIdolInfoArray> {
     return new Idols(this.axios).getIdolInfo(id);
+  }
+
+  /**
+   * ボーダー情報の取得
+   * ランキングイベントの報酬ボーダーの情報を取得します。
+   *
+   * @returns Promise<IGetBorderInfo>
+   */
+  public async getBorderInfo(id: number): Promise<IGetBorderInfo> {
+    return new EventRanking(this.axios).getBorderInfo(id);
   }
 }

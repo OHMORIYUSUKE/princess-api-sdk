@@ -3,6 +3,7 @@ import { IGetLatestAppAssetVersion } from '../schemas/Versions/IGetLatestAppAsse
 import { IGetIdolInfo, IGetIdolInfoArray } from '../schemas/Idols/IGetIdolInfo';
 import { PrincessInvalidArgumentException } from '../errer/PrincessInvalidArgumentException';
 
+// WIP
 export class Cards {
   private axios: AxiosInstance;
   constructor(axios: AxiosInstance) {

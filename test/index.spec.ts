@@ -1,6 +1,19 @@
 import { PrincessApiSdk } from '../src';
 import { PrincessInvalidArgumentException } from '../src/errer/PrincessInvalidArgumentException';
 
+const isOneOfType = (...expectedTypes: any[]) => {
+  return (received: any) => {
+    const isExpectedType = expectedTypes.some(
+      expectedType => typeof received === expectedType
+    );
+    return {
+      pass: isExpectedType,
+      message: () =>
+        `Expected ${String(received)} to be one of ${expectedTypes.join(', ')}`,
+    };
+  };
+};
+
 describe('index', () => {
   describe('PrincessApiSdk ', () => {
     it('最新のアプリ・アセットバージョンの取得', async () => {
@@ -204,6 +217,34 @@ describe('index', () => {
     async function errFunction() {
       const princessApiSdk = new PrincessApiSdk();
       await princessApiSdk.getIdolInfo(-1);
+    }
+
+    await expect(errFunction).rejects.toThrow(PrincessInvalidArgumentException);
+  });
+
+  it('ボーダー情報の取得(バージョン指定)', async () => {
+    const princessApiSdk = new PrincessApiSdk();
+    const response = await princessApiSdk.getBorderInfo(192);
+
+    expect(response).toEqual({
+      eventPoint: expect.any(Array),
+      highScore: expect.any(Array),
+      // highScore2: expect.any(Array) | expect.any(null),
+      // highScoreTotal: expect.any(Array),
+      loungePoint: expect.any(Array),
+      idolPoint: expect.arrayContaining([
+        expect.objectContaining({
+          idolId: expect.any(Number),
+          borders: expect.any(Array),
+        }),
+      ]),
+    });
+  });
+
+  it('ボーダー情報の取得(ID指定(IDが不正))', async () => {
+    async function errFunction() {
+      const princessApiSdk = new PrincessApiSdk();
+      await princessApiSdk.getBorderInfo(-1);
     }
 
     await expect(errFunction).rejects.toThrow(PrincessInvalidArgumentException);

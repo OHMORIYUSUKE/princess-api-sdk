@@ -1,12 +1,5 @@
 export type IGetIdolInfoArray = IGetIdolInfo[];
 
-export enum TypeEnum {
-  Princess = 1,
-  Fairy = 2,
-  Angel = 3,
-  Ex = 5,
-}
-
 export type IGetIdolInfo = {
   id: number;
   sortId: number;
@@ -33,6 +26,13 @@ export type IGetIdolInfo = {
   bloodType: BloodType;
   measurements: Measurements;
 };
+
+enum TypeEnum {
+  Princess = 1,
+  Fairy = 2,
+  Angel = 3,
+  Ex = 5,
+}
 
 type Birthplace = {
   id: number;

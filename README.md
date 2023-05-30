@@ -43,6 +43,7 @@ const response = await princessApiSdk.getLatestAppAssetVersion();
 ```ts
 import { PrincessApiSdk } from 'princess-api-sdk';
 
+const princessApiSdk = new PrincessApiSdk();
 // バージョン指定
 const response = await princessApiSdk.getAppVersion('1.0.6');
 ```
@@ -60,6 +61,7 @@ const response = await princessApiSdk.getAppVersion('1.0.6');
 ```ts
 import { PrincessApiSdk } from 'princess-api-sdk';
 
+const princessApiSdk = new PrincessApiSdk();
 // バージョン未指定
 const response = await princessApiSdk.getAppVersion();
 ```
@@ -96,6 +98,7 @@ const response = await princessApiSdk.getAppVersion();
 ```ts
 import { PrincessApiSdk } from 'princess-api-sdk';
 
+const princessApiSdk = new PrincessApiSdk();
 // バージョン指定
 const response = await princessApiSdk.getAssetVersion(1);
 ```
@@ -112,6 +115,8 @@ const response = await princessApiSdk.getAssetVersion(1);
 
 ```ts
 import { PrincessApiSdk } from 'princess-api-sdk';
+
+const princessApiSdk = new PrincessApiSdk();
 // バージョン未指定
 const response = await princessApiSdk.getAssetVersion();
 ```
@@ -143,6 +148,7 @@ const response = await princessApiSdk.getAssetVersion();
 ```ts
 import { PrincessApiSdk } from 'princess-api-sdk';
 
+const princessApiSdk = new PrincessApiSdk();
 // id指定
 const response = await princessApiSdk.getIdolInfo(1);
 ```
@@ -200,6 +206,7 @@ const response = await princessApiSdk.getIdolInfo(1);
 ```ts
 import { PrincessApiSdk } from 'princess-api-sdk';
 
+const princessApiSdk = new PrincessApiSdk();
 // id指定なし
 const response = await princessApiSdk.getIdolInfo();
 ```

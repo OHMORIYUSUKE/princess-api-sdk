@@ -36,7 +36,7 @@ export class PrincessApiSdk {
    * @param version バージョンを指定しない場合、レスポンスはすべてのバージョンの配列になります。
    * @returns Promise<IGetAppVersion>
    */
-  getAppVersion(version: string): Promise<IGetAppVersion>;
+  getAppVersion(id: string): Promise<IGetAppVersion>;
   getAppVersion(): Promise<IGetAppVersionArray>;
   public async getAppVersion(
     version?: string
@@ -51,7 +51,7 @@ export class PrincessApiSdk {
    * @param version バージョンを指定しない場合、レスポンスはすべてのバージョンの配列になります。
    * @returns Promise<IGetAssetVersionArray | IGetAssetVersion>
    */
-  getAssetVersion(version: number): Promise<IGetAssetVersion>;
+  getAssetVersion(id: number): Promise<IGetAssetVersion>;
   getAssetVersion(): Promise<IGetAssetVersionArray>;
   public async getAssetVersion(
     version?: number
@@ -67,7 +67,7 @@ export class PrincessApiSdk {
    * @param id ID を指定しない場合、レスポンスはすべてのアイドルの配列になります。
    * @returns Promise<IGetIdolInfo | IGetIdolInfoArray>
    */
-  getIdolInfo(version: number): Promise<IGetIdolInfo>;
+  getIdolInfo(id: number): Promise<IGetIdolInfo>;
   getIdolInfo(): Promise<IGetIdolInfoArray>;
   public async getIdolInfo(
     id?: number
